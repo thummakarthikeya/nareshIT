@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./testsubject.css">
+    <link rel="stylesheet" href="./class.css">
+</head>
+<body>
+    <div class="main_container">
+        <div class="left_container">
+            <img src="./assets/Nareshit_logo.jpeg" alt="">
+
+             <div class="content">
+
+                <legend>    
+                    <form class="content" action="./class.css">
+                    <label for="name">name </label>
+                    <input type="text" name="name" placeholder="Enter your name" id="name" required />
+                    <br>
+                    <label for="m">mail</label>
+                    <input type="radio" name="gender" value="mail" id="f" required />
+                    <label for="f">femail</label>
+                    <input type="radio" name="gender" value="femail" id="f" required />
+                    <br>
+                    <div>
+                    
+                    </div>
+                    <label for="E">English</label>
+                    <input type="checkbox"  />
+                    <br>
+                    <label for="T">Telugu</label>
+                    <input type="checkbox"  />
+                    <br>
+                    <label for="H">Hindi</label>
+                    <input type="checkbox"  />
+                    <br>
+                    <label for="Tamil">Tamil</label>
+                    <input type="checkbox"  />
+                    <br>
+                    <label for="O">Other</label>
+                    <input type="checkbox"  />
+                    <br>
+                    <label for="">dropdown</label>
+                    <select name="course" id="" multiple size="6"  >
+                        <option value="">Select Your Cource </option>
+                        <optgroup label="Diploma ">
+                            <option value="CSE">CSE</option>
+                            <option value="EEE">EEE</option>
+                            <option value="ECE">ECE</option>
+                            <option value="AIML">AIML</option>
+                            <option value="CSM">CSM</option>
+                            <option value="CSD">CSD</option>
+                        </optgroup>
+                        <optgroup label="inter">
+                            <option value="MPC">MPC</option>
+                            <option value="CEC">CEC</option>
+                        </optgroup>
+                        <optgroup label="BTech">
+                            <option value="CSE">CSE</option>
+                            <option value="EEE">EEE</option>
+                            <option value="ECE">ECE</option>
+                            <option value="AIML">AIML</option>
+                            <option value="CSM">CSM</option>
+                            <option value="CSD">CSD</option>
+                        </optgroup>
+                    
+                        
+                    </select>
+
+                    <input type="hidden" name="name" placeholder="Enter your name" id="name" />
+
+                    <textarea name="" id=""  rows="10px" >it is used text area 
+                        to enter a large amount of data used for messages addresses etc .
+                        text area size can be changed using rows and columns .
+                    </textarea>
+
+                    <button type="submit" >Submit</button>
+                </form>
+                    
+                </legend>
+                
+            </div>
+        </div>
+        <div class="right_container">
+            <nav class="navbar">
+                <ul class="nav-list">
+                    <li class="nav-item">Tattoo Artists</li>
+                    <li class="nav-item">Tattos</li>
+                    <li class="nav-item">Artist Finder</li>
+                    <li class="nav-item"><Link to="/UserCard">Guides</Link></li>
+                    <li class="nav-item nav-right">For Tattooers</li>
+                </ul>
+            </nav>
+                <h1>MCQ Test</h1>
+              <div class="mcq-section">
+                    <div class="test-card">
+                        <div class="test-id">TestID: 37590</div>
+                        <div class="test-date">2025-08-07</div>
+                        <div class="test-title">Basics Html [MCQs]</div>
+                        <div class="test-timing">
+                            <span>Start: 2025-08-04 6:42 PM | End: 2025-08-08 11:59 PM</span>
+                            <button class="view-btn">📄 VIEW RESULTS</button>
+                        </div>
+                    </div>
+                </div>
+                        
+               
+                <div class="mcq-section" id="mcq-section">
+
+                </div>
+
+                
+                
+        </div>
+
+
+
+           
+        </div>
+    </div>
+    <script>
+                    fetch("testData.json")
+                        .then(res =>res.json())
+                        .then(data => {
+                            const section = document.getElementById("mcq-section");
+                            section.innerHTML = data.map(test => `
+                                <div class="test-card">
+                                    <div class="test-id">TestID: ${test.testID}</div>
+                                    <div class="test-date">${test.date}</div>
+                                    <div class="test-title">${test.title}</div>
+                                    <div class="test-timing">
+                                    <span>Start: ${test.start} | End: ${test.end}</span>
+                                    <button class="view-btn">📄 VIEW RESULTS</button>
+                                    </div>
+                                </div>
+                                `).join("");
+                        })
+                        .catch(err => console.error("Error loading test data:", err));
+                </script>
+
+</body>
+</html>

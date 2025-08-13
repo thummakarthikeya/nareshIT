@@ -1,0 +1,16 @@
+.content {
+    padding: 10px;
+    gap: 10px;
+}
+
+.content input {
+    margin-bottom: 10px;
+}
+
+.content select {
+    margin-bottom: 0px;
+}
+
+.content textarea {
+    margin-top: 20px;
+}

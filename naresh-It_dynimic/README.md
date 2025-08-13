@@ -1,0 +1,2 @@
+-> when we double click on the froject it will open normally in the brouser but it is not the dynimic , it doesnot show the dynimic tests.
+-> To view dynimic tests open code in vscode and then click on go-live.
